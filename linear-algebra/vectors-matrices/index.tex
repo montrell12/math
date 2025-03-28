@@ -1,0 +1,271 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+\title{Math Notes: Vectors}
+\author{Trell}
+\date{\today}
+
+% Define colors
+\definecolor{LightText}{RGB}{220,220,220}  % Light grey for main text
+\definecolor{AccentColor}{RGB}{255,165,0}  % Orange for accents
+
+\pagecolor{DarkBlue}
+\color{LightText}
+\begin{document}
+
+\maketitle Vectors and Matrices
+
+\section{Key Concepts}
+\textbf {Zero matrices}
+
+## A matrix A is a zero matrix if all its elements are equal to zero, and we write [eq9] 
+
+% \textbf {Example}:  If A is a $2 times 3$ matrix and $A=0$, then
+A = $\begin{bmatrix}
+ 0 & 0 & 0 \\
+ 0 & 0 & 0
+\end{bmatrix}$
+
+\textbf {Square matrices}
+% A $K times L$ matrix is called a square matrix if the number of its rows is the same as the number of its columns, that is, $K=L$.
+
+\textbf {Example}
+$\begin{bmatrix}
+  2 & 1 \\
+  9 & 4
+\end{bmatrix}$
+
+\textbf {Transpose of a matrix and vector}
+The transpose of a matrix is simply a flipped version of the original matrix. We can transpose a matrix by switching its rows with its columns. We denote the transpose of matrix A by AT
+A = $\begin{bmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6
+\end{bmatrix}$
+
+then the transpose of A is 
+$\mathbf{A}^\intercal$\\ = $\begin{bmatrix}
+  1 & 4 \\
+  2 & 5 \\
+  3 & 6
+\end{bmatrix}$
+
+if vector A = $\begin{bmatrix}
+  1 & 2 & 4 & 5
+\end{bmatrix}$
+
+then the transpose version is $\mathbf{A}^\intercal$\\ =  $\begin{bmatrix}
+  1 \\
+  2 \\
+  4 \\ 
+  5
+\end{bmatrix}$
+
+
+\textbf {Symmetric matrices}
+ A square matrix is said to be symmetric if it is equal to its transpose. 
+
+\textbf {Example}
+if A is a \[
+  2 times 2
+\] 
+matrix defined by
+A = $\begin{bmatrix}
+  4 & 5 \\
+  5 & 3
+\end{bmatrix}$
+its transpose is the following matrix
+
+$\mathbf{A}^\intercal$\\= $\begin{bmatrix}
+  4 & 5 \\
+  5 & 3
+\end{bmatrix}$
+\section{Definitions}
+\textbf{Scalar} - a number. Examples could be temperature, distance, speed, or mass; all quantities that have a magnitude but no direction, other than perhaps positive or negative.
+
+\textbf{Vector} - a list of numbers. There are at least two ways to think of it, one as a point in space. Vectors are denoted by $\vec{A}$.
+Example of a vector:
+\begin{equation}
+  \mathbf{x}= \begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}
+  \label{vectorLatex}
+\end{equation}
+
+\textbf{Magnitude} - of a vector is the distance from the endpoint of the vector to the origin so in short its length. The magnitude of a vector is a scalar value denoted by:
+\[
+  \| \mathbf{v} \|
+\]
+
+\textbf{Unit vectors} - have a magnitude of 1, denoted by a small caret or hat. A unit vector can be used to express the direction of a vector independent of its magnitude.
+
+Calculation of a particular vector to a unit vector: we take the original vector and divide it by its magnitude. In mathematical terms, this process is written as $\hat{v} = \frac{\vec{v}}{\|\vec{v}\|}$.
+
+\section{Calculations for Vectors}
+\textbf{Multiplying} - We have demonstrated how to create a unit vector that has a magnitude of 1 but a direction identical to the vector. Taking together the magnitude and the unit vector, we have all of the information contained in the vector, but neatly separated into its magnitude and direction components. We can use these two components to re-create the vector by multiplying the vector by the scalar like so: $\vec{v} = \|\vec{v}\| \cdot \hat{v}$
+
+\textbf{Addition and Subtraction} 
+Numerically, we add vectors component-by-component. That is to say, we add the x-components together, and then separately we add the y-components together. For example, if $\vec{a} = (a_x, a_y)$ and $\vec{b} = (b_x, b_y)$, then:
+
+Adding formula: $\vec{c} = \vec{a} + \vec{b} = (a_x + b_x, a_y + b_y)$
+
+Subtracting formula: $\vec{c} = \vec{a} - \vec{b} = (a_x - b_x, a_y - b_y)$
+
+Vector addition has a very simple interpretation in the case of things like displacement. If in the morning a ship sailed 4 miles east and 3 miles north, and then in the afternoon it sailed a further 1 mile east and 2 miles north, what was the total displacement for the whole day? 5 miles east and 5 miles north – vector addition at work.
+\section{Vector Graph}
+\tdplotsetmaincoords{70}{110}
+
+\begin{tikzpicture}[scale=2,tdplot_main_coords]
+
+% Draw coordinate system
+\draw[thick,->] (0,0,0) -- (2,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,2,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,2) node[anchor=south]{$z$};
+
+% Draw vectors
+\draw[-stealth,red,very thick] (0,0,0) -- (1.5,0.5,1) node[anchor=south west]{$\vec{a}$};
+\draw[-stealth,blue,very thick] (0,0,0) -- (0.5,1.5,0.8) node[anchor=south east]{$\vec{b}$};
+\draw[-stealth,green,very thick] (0,0,0) -- (1,1,1.5) node[anchor=south]{$\vec{c}$};
+
+% Draw projections on xy-plane
+\draw[red,dashed] (1.5,0.5,1) -- (1.5,0.5,0);
+\draw[blue,dashed] (0.5,1.5,0.8) -- (0.5,1.5,0);
+\draw[green,dashed] (1,1,1.5) -- (1,1,0);
+
+% Label the origin
+\node[anchor=north east] at (0,0,0) {$O$};
+
+\end{tikzpicture}
+\section{Linear Independence}
+If two vectors point in different directions, even if they are not very different directions, then the two vectors are said to be linearly independent.
+
+\section{Linear Independence Scalar Info}
+We can multiply a vector by a constant, scalar value and get a vector, and vice versa to get from $\vec{v}$ to $k\vec{v}$. If the two vectors point in different directions, then it is not possible to make one out of the other because multiplying a vector by a scalar will never change the direction of the vector, it will only change the magnitude. This concept generalizes to families of more than two vectors. Three vectors are said to be linearly independent if there is no way to construct one vector by combining scaled versions of the other two. The same definition applies to families of four or more vectors by applying the same rules.
+
+Definition: A family of vectors is linearly independent if no one of the vectors can be created by any linear combination of the other vectors in the family. For example, $\vec{c}$ is linearly independent of $\vec{a}$ and $\vec{b}$ if and only if it is impossible to find scalar values of $\alpha$ and $\beta$ such that $\vec{c} = \alpha\vec{a} + \beta\vec{b}$.
+
+\section{Vector Multiplication and Dot Product}
+There are two principal ways of multiplying vectors, called dot products (a.k.a. scalar products) and cross products.
+
+The dot product: $d = \vec{a} \cdot \vec{b}$
+The dot product generates a scalar value from the product of two vectors.
+
+The cross product: $\vec{d} = \vec{a} \times \vec{b}$
+The cross product generates a vector from the product of two vectors.
+
+\section{Orthogonality}
+Orthogonality - as the angle between the two vectors opens up to approach 90°, the dot product of the vectors approaches zero.
+
+\section{Matrices} 
+A matrix, like a vector, is also a collection of numbers. The difference is that a matrix is a table of numbers rather than a list. Many of the same rules we just outlined for vectors above apply equally well to matrices. (In fact, you can think of vectors as matrices that happen to only have one column or one row.) First, let's consider matrix addition and subtraction. This part is uncomplicated. You can add and subtract matrices the same way you add vectors – element by element.
+
+$M = \begin{bmatrix}
+ 1 & 2 & 3 \\ 
+ a & 2 & 5 
+\end{bmatrix}$
+
+\section{Matrix Addition and Subtraction}
+
+Let A and B be matrices of the same size, $m \times n$. 
+
+\subsection{Matrix Addition}
+
+\[
+A + B = 
+\begin{bmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix} +
+\begin{bmatrix} 
+b_{11} & b_{12} & \cdots & b_{1n} \\
+b_{21} & b_{22} & \cdots & b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{m1} & b_{m2} & \cdots & b_{mn}
+\end{bmatrix}
+\]
+
+\[
+= \begin{bmatrix} 
+a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
+\end{bmatrix}
+\]
+
+\subsection{Matrix Subtraction}
+
+\[
+A - B = 
+\begin{bmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix} -
+\begin{bmatrix} 
+b_{11} & b_{12} & \cdots & b_{1n} \\
+b_{21} & b_{22} & \cdots & b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{m1} & b_{m2} & \cdots & b_{mn}
+\end{bmatrix}
+\]
+
+\[
+= \begin{bmatrix} 
+a_{11}-b_{11} & a_{12}-b_{12} & \cdots & a_{1n}-b_{1n} \\
+a_{21}-b_{21} & a_{22}-b_{22} & \cdots & a_{2n}-b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1}-b_{m1} & a_{m2}-b_{m2} & \cdots & a_{mn}-b_{mn}
+\end{bmatrix}
+\]
+
+\section{Linear Matrix/Transformations}
+Linear Transformations are functions (functions that take vectors as inputs), but they're a special subset of functions. Linear transformations are the set of all functions that can be written as a matrix multiplication:
+
+\begin{equation}
+  \vec{y} = A\vec{x}
+  \label{eq:linear_transformation}
+\end{equation}
+
+Where $A$ is a matrix, $\vec{x}$ is the input vector, and $\vec{y}$ is the output vector.
+
+\section{Formulas and Equations}
+
+\section{Equations of Planes}
+
+\begin{itemize}
+    \item \textbf{Normal Form:} Equation of a plane at a perpendicular distance $d$ from the origin and having a unit normal vector $\hat{n}$ is:
+    \[
+    \vec{r} \cdot \hat{n} = d
+    \]
+
+    \item \textbf{Perpendicular to a given Line and through a Point:} The equation of a plane perpendicular to a given vector $\vec{N}$, and passing through a point $\vec{a}$ is:
+    \[
+    (\vec{r} - \vec{a}) \cdot \vec{N} = 0
+    \]
+
+    \item \textbf{Through three Non-Collinear Points:} The equation of a plane passing through three non-collinear points $\vec{a}$, $\vec{b}$, and $\vec{c}$, is:
+    \[
+    (\vec{r} - \vec{a}) \cdot [(\vec{b} - \vec{a}) \times (\vec{c} - \vec{a})] = 0
+    \]
+
+    \item \textbf{Intersection of Two Planes:} The equation of a plane passing through the intersection of two planes $\vec{r} \cdot \hat{n}_1 = d_1$ and $\vec{r} \cdot \hat{n}_2 = d_2$, is:
+    \[
+    \vec{r} \cdot (\hat{n}_1 + \lambda \hat{n}_2) = d_1 + \lambda d_2
+    \]
+\end{itemize}
+% Key formulas and equations
+
+\section{Examples}
+% Worked examples or sample problems
+
+\section{Practice Problems}
+% Problems to solve or questions to answer
+
+
+\section{Notes / quick refrence}
+transpose of a matrix notaion is - $\mathbf{A}^\intercal$\
+\end{document}

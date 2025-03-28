@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{longtable}
+
+\title{Comprehensive List of Mathematical Symbols in LaTeX}
+\author{Your Name}
+\date{}
+
+\begin{document}
+
+\maketitle Symbols
+
+\begin{longtable}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.4\textwidth}|}
+\hline
+\textbf{Symbol} & \textbf{Definition} & \textbf{Example} \\
+\hline
+\endhead
+
+% Basic Arithmetic
+$+$ & Addition & $2 + 3 = 5$ \\
+\hline
+$-$ & Subtraction & $5 - 2 = 3$ \\
+\hline
+$\times$ or $\cdot$ & Multiplication & $2 \times 3 = 6$ or $2 \cdot 3 = 6$ \\
+\hline
+$\div$ or $/$ & Division & $6 \div 2 = 3$ or $6 / 2 = 3$ \\
+\hline
+
+% Equality and Inequality
+$=$ & Equals & $x = 5$ \\
+\hline
+$\neq$ & Not equal to & $2 \neq 3$ \\
+\hline
+$<$ & Less than & $2 < 3$ \\
+\hline
+$>$ & Greater than & $3 > 2$ \\
+\hline
+$\leq$ & Less than or equal to & $2 \leq 2$ \\
+\hline
+$\geq$ & Greater than or equal to & $3 \geq 3$ \\
+\hline
+
+% Set Theory
+$\in$ & Element of & $2 \in \{1,2,3\}$ \\
+\hline
+$\notin$ & Not an element of & $4 \notin \{1,2,3\}$ \\
+\hline
+$\subset$ & Subset of & $\{1,2\} \subset \{1,2,3\}$ \\
+\hline
+$\supset$ & Superset of & $\{1,2,3\} \supset \{1,2\}$ \\
+\hline
+$\cup$ & Union & $\{1,2\} \cup \{2,3\} = \{1,2,3\}$ \\
+\hline
+$\cap$ & Intersection & $\{1,2,3\} \cap \{2,3,4\} = \{2,3\}$ \\
+\hline
+$\emptyset$ & Empty set & $\{x \in \mathbb{N} : x < 0\} = \emptyset$ \\
+\hline
+
+% Logic
+$\wedge$ & And & $A \wedge B$ \\
+\hline
+$\vee$ & Or & $A \vee B$ \\
+\hline
+$\neg$ & Not & $\neg A$ \\
+\hline
+$\implies$ & Implies & $A \implies B$ \\
+\hline
+$\iff$ & If and only if & $A \iff B$ \\
+\hline
+
+% Calculus
+$\lim_{x \to a}$ & Limit & $\lim_{x \to 0} \frac{\sin x}{x} = 1$ \\
+\hline
+$\frac{d}{dx}$ & Derivative & $\frac{d}{dx} x^2 = 2x$ \\
+\hline
+$\int$ & Integral & $\int x^2 dx = \frac{1}{3}x^3 + C$ \\
+\hline
+$\sum$ & Summation & $\sum_{i=1}^n i = \frac{n(n+1)}{2}$ \\
+\hline
+$\prod$ & Product & $\prod_{i=1}^n i = n!$ \\
+\hline
+
+% Number Sets
+$\mathbb{N}$ & Natural numbers & $\mathbb{N} = \{1, 2, 3, ...\}$ \\
+\hline
+$\mathbb{Z}$ & Integers & $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$ \\
+\hline
+$\mathbb{Q}$ & Rational numbers & $\mathbb{Q} = \{\frac{a}{b} : a,b \in \mathbb{Z}, b \neq 0\}$ \\
+\hline
+$\mathbb{R}$ & Real numbers & $\mathbb{R} = (-\infty, \infty)$ \\
+\hline
+$\mathbb{C}$ & Complex numbers & $\mathbb{C} = \{a + bi : a,b \in \mathbb{R}\}$ \\
+\hline
+
+% Greek Letters (commonly used)
+$\alpha$ & Alpha & $\alpha$-particle \\
+\hline
+$\beta$ & Beta & $\beta$-decay \\
+\hline
+$\gamma$ & Gamma & $\gamma$-radiation \\
+\hline
+$\pi$ & Pi & $\pi \approx 3.14159$ \\
+\hline
+$\theta$ & Theta & $\sin \theta$ \\
+\hline
+
+% Miscellaneous
+$\infty$ & Infinity & $\lim_{x \to \infty} \frac{1}{x} = 0$ \\
+\hline
+$\partial$ & Partial derivative & $\frac{\partial f}{\partial x}$ \\
+\hline
+$\nabla$ & Gradient & $\nabla f = (\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z})$ \\
+\hline
+$\forall$ & For all & $\forall x \in \mathbb{R}, x^2 \geq 0$ \\
+\hline
+$\exists$ & There exists & $\exists x \in \mathbb{R}, x^2 = 2$ \\
+\hline
+$\therefore$ & Therefore & $A = B, B = C, \therefore A = C$ \\
+\hline
+$\because$ & Because & $x = 2 \because x^2 = 4$ and $x > 0$ \\
+\hline
+
+\end{longtable}
+
+\end{document}

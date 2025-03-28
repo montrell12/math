@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{siunitx}
+
+\begin{document}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.8]
+    % Draw coordinate axes
+    \draw[->] (-1,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,5) node[above] {$y$};
+    
+    % Draw vector
+    \draw[-stealth,thick,red] (0,0) -- (4,3) node[midway,above right] {$\vec{v}$};
+    
+    % Draw projection lines
+    \draw[dashed] (4,3) -- (4,0) node[below] {$4$};
+    \draw[dashed] (4,3) -- (0,3) node[left] {$3$};
+    
+    % Draw angle arc
+    \draw (0.8,0) arc (0:36.87:0.8);
+    \node at (0.6,0.3) {$\theta$};
+    
+    % Add magnitude label
+    \node[below right] at (2,1.5) {$|\vec{v}| = 5$};
+\end{tikzpicture}
+\caption{Illustration of vector $\vec{v} = (4, 3)$}
+\end{figure}
+
+\begin{align*}
+\text{Vector} &: \vec{v} = (4, 3) \\
+\text{Magnitude} &: |\vec{v}| = \sqrt{4^2 + 3^2} = 5 \\
+\text{Angle} &: \theta = \tan^{-1}\left(\frac{3}{4}\right) \approx \ang{36.87}
+\end{align*}
+
+\end{document}
